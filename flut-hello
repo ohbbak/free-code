@@ -1,0 +1,12 @@
+''
+void main() {
+runApp(
+const Center(
+child: Text(
+'안녕, 플러터!',
+textDirection: TextDirection.ltr, // 왼쪽에서 오른쪽으로
+),
+),
+);
+}
+'''
