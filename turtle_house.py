@@ -1,6 +1,5 @@
 # 터틀로 집 만들어보기
-import turtle 
-t=turtle.Turtle()
+import turtle as t
 t.shape("turtle")
 
 size = int(input("집의 크기를 입력하세요: "))
@@ -22,3 +21,4 @@ t.forward(size)
 
 
 t.done()
+
