@@ -1,0 +1,22 @@
+void main() {
+  var size = 10;
+  for ( var i = 0; i<size; i++) {
+  printSharp(size, i);
+  }
+}
+
+
+void printSharp(int size, int y) {
+  var result = "";
+  for (var x = 0; x<size; x++) {
+    var condition =
+      x == y ||
+      size - 1 - x == y;
+    if (condition) {
+      result += "#";
+    } else{
+      result += " ";
+    }
+  }
+  print(result);
+}
