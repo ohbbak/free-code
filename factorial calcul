@@ -1,0 +1,10 @@
+#정수값을 입력받아 팩토리얼 값을 계산하고 출력
+
+
+n=int(input("1이상의 정수"))
+
+fact=1
+for i in range(2, n+1):
+    fact=fact*i
+
+print(f"{n}! = {fact}")
