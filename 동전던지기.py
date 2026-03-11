@@ -10,4 +10,5 @@ else:
 print("게임 종료")
 
 
+# firebass 예시 및 사용법
 
