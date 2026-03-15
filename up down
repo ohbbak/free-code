@@ -23,14 +23,14 @@ public class JavaGame {
                 attempts++;
 
                 if (guess < targetNumber) {
-                    System.out.println("🚀 UP! 더 큰 숫자입니다.");
+                    System.out.println(" UP! 더 큰 숫자입니다.");
                 } else if (guess > targetNumber) {
-                    System.out.println("📉 DOWN! 더 작은 숫자입니다.");
+                    System.out.println(" DOWN! 더 작은 숫자입니다.");
                 } else {
-                    System.out.println("🎉 정답입니다! " + attempts + "번 만에 맞추셨네요!");
+                    System.out.println(" 정답입니다! " + attempts + "번 만에 맞추셨네요!");
                 }
             } else {
-                System.out.println("❌ 숫자가 아닙니다! 다시 입력하세요.");
+                System.out.println(" 숫자가 아닙니다! 다시 입력하세요.");
                 scanner.next(); // 잘못된 입력 버리기
             }
         }
