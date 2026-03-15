@@ -4,23 +4,23 @@ import colorsys
 # 화면 설정
 t = turtle.Turtle()
 s = turtle.Screen()
-s.bgcolor("black")  # 배경색을 검은색으로
-t.speed(0)          # 가장 빠른 속도
+s.bgcolor("black")  
+t.speed(0)          
 
-n = 36              # 소용돌이의 밀도
-h = 0               # 색상을 결정할 변수
+n = 36             
+h = 0               
 
 print("거북이가 예술 작품을 그리는 중입니다... 창을 확인하세요!")
 
 for i in range(400):
-    # colorsys를 이용해 무지개색 추출 (HSV to RGB)
+
     c = colorsys.hsv_to_rgb(h, 1, 0.8)
     h += 1/n
     t.color(c)
     
-    # 앞으로 가고 왼쪽으로 꺾기 (수학적 규칙)
+
     t.forward(i * 1.5)
-    t.left(59)      # 60도면 육각형이 되지만, 59도라 조금씩 어긋나며 소용돌이가 생김
+    t.left(59)      
     t.width(i/100 + 1)
 
 turtle.done()
