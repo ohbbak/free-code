@@ -1,12 +1,21 @@
-''
-void main() {
-runApp(
-const Center(
-child: Text(
-'hi flutt',
-textDirection: TextDirection.ltr, // 왼쪽에서 오른쪽으로
-),
-),
-);
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text(
+            'Hi Flutter!',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
+      ),
+    );
+  }
 }
-'''
