@@ -21,6 +21,8 @@ if user_input == result:
 else:
     print("오답")
 
+# 이상 3자리로도 해보기
+
 
 
 
