@@ -1,4 +1,4 @@
-# 터틀로 집 만들어보기
+
 import turtle as t
 t.shape("turtle")
 
