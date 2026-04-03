@@ -1,18 +1,18 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; // 1. 구글 메테리얼 디자인 UI 라이브러리 가져오기
 
-void main() => runApp(const MyApp());
+void main() => runApp(const MyApp()); // 2. 앱 실행의 시작점 (엔트리 포인트)
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget { // 3. 화면 변화가 없는 정적인 위젯 선언
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text(
+    return const MaterialApp( // 4. 앱의 전체적인 테마와 설정을 담는 뿌리
+      home: Scaffold(          // 5. 상단바, 바디 등 앱의 기본 구조를 만드는 도구
+        body: Center(          // 6. 자식 위젯을 화면 정중앙에 배치
+          child: Text(         // 7. 화면에 텍스트 출력
             'Hi Flutter!',
-            style: TextStyle(fontSize: 24),
+            style: TextStyle(fontSize: 24), // 8. 글자 크기 조절
           ),
         ),
       ),
