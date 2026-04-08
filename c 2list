@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int arr[3][4] = {
+        {1,  2,  3,  4},
+        {5,  6,  7,  8},
+        {9, 10, 11, 12}
+    };
+
+    // 논리적 순서 확인 (이중 for문)
+    printf("=== 논리적 순서 ===\n");
+    for(int i=0; i<3; i++){
+        for(int j=0; j<4; j++){
+            printf("arr[%d][%d] = %d\n", i, j, arr[i][j]);
+        }
+    }
+
+    // 물리적 순서 확인 (주소 출력)
+    printf("\n=== 물리적 순서 (메모리 주소) ===\n");
+    for(int i=0; i<3; i++){
+        for(int j=0; j<4; j++){
+            printf("arr[%d][%d] 주소: %p 값: %d\n",
+                   i, j, &arr[i][j], arr[i][j]);
+        }
+    }
+    return 0;
+}
