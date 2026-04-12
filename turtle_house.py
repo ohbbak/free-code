@@ -3,17 +3,22 @@ import turtle as t
 t.shape("turtle")
 size = int(input("집의 크기를 입력하세요: "))
 
-# 지붕 (삼각형)
-t.left(60)
-t.forward(size)
-t.right(120)
-t.forward(size)
-t.right(30)
+# =====================
+# 지붕 그리기 (삼각형)
+# =====================
 
-# 몸체 (사각형) - 반복문 적용!
-for i in range(4):
-    t.forward(size)
-    t.right(90)
+t.left(60)          # 왼쪽으로 60도 회전 (삼각형 시작 각도)
+t.forward(size)     # 왼쪽 지붕 선 그리기
+t.right(120)        # 오른쪽으로 120도 회전 (삼각형 꼭짓점)
+t.forward(size)     # 오른쪽 지붕 선 그리기
+t.right(30)         # 몸체 시작 방향으로 각도 조정
 
-t.done()
+# =====================
+# 몸체 그리기 (사각형)
+# =====================
 
+for i in range(4):  # 사각형은 4번 반복
+    t.forward(size) # 한 변 그리기
+    t.right(90)     # 오른쪽으로 90도 회전 (사각형 꼭짓점)
+
+t.done()            # 그리기 완료
