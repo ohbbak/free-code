@@ -1,5 +1,5 @@
 #flutter 플러터 코드
-# 점점 커지는
+# 점점 커지는 플러터 코드
 
 void main() {
   var size = 10;
