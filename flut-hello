@@ -1,19 +1,52 @@
-import 'package:flutter/material.dart'; // 1. 구글 메테리얼 디자인 UI 라이브러리 가져오기
+import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp()); // 2. 앱 실행의 시작점 (엔트리 포인트)
+void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget { // 3. 화면 변화가 없는 정적인 위젯 선언
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp( // 4. 앱의 전체적인 테마와 설정을 담는 뿌리
-      home: Scaffold(          // 5. 상단바, 바디 등 앱의 기본 구조를 만드는 도구
-        body: Center(          // 6. 자식 위젯을 화면 정중앙에 배치
-          child: Text(         // 7. 화면에 텍스트 출력
-            'Hi Flutter!',
-            style: TextStyle(fontSize: 24), // 8. 글자 크기 조절
-          ),
+    return const MaterialApp(
+      home: MyHome(),
+    );
+  }
+}
+
+// StatefulWidget으로 변경 (상태 변화가 있으므로)
+class MyHome extends StatefulWidget {
+  const MyHome({super.key});
+
+  @override
+  State<MyHome> createState() => _MyHomeState();
+}
+
+class _MyHomeState extends State<MyHome> {
+  String message = 'Hi Flutter!'; // 현재 텍스트 상태
+
+  void changeMessage() {
+    setState(() {                  // 상태 변경 → 화면 자동 갱신
+      message = '반갑습니다! 😊';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              message,
+              style: const TextStyle(fontSize: 24),
+            ),
+            const SizedBox(height: 20),       // 간격
+            ElevatedButton(                    // 버튼 추가!
+              onPressed: changeMessage,         // 버튼 누르면 실행
+              child: const Text('눌러보세요'),
+            ),
+          ],
         ),
       ),
     );
