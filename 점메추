@@ -1,0 +1,17 @@
+import random
+
+# 1. 메뉴 리스트 만들기
+menu_list = ["김치찌개", "돈까스", "초밥", "햄버거", "마라탕", "쌀국수", "제육볶음"]
+
+def pick_lunch():
+    print("--- 🥘 오늘의 메뉴 결정장애 해결사 ---")
+    
+    # 2. 랜덤하게 하나 뽑기
+    choice = random.choice(menu_list)
+    
+    # 3. f-string으로 결과 출력
+    print(f"음... 오늘은 {choice}(이)가 딱이네요!")
+    print("-----------------------------------")
+
+# 함수 실행
+pick_lunch()
