@@ -11,13 +11,13 @@ int main() {
 
     printf("=== 매크로 작동 원리 비교 ===\n");
 
-    // 1. 단순 치환의 함정 (1 + 2 * 1 + 2)
+    // 1. 단순 치환의 함정 
     printf("1. POWER_BAD(1+2)의 결과 : %d\n", POWER_BAD(1+2));
     
-    // 2. 안전한 계산 ((1+2) * (1+2))
+    // 2. 안전한 계산 
     printf("2. POWER_GOOD(1+2)의 결과: %d\n", POWER_GOOD(1+2));
 
-    // 3. 일반적인 변수 사용 (이미 계산된 3을 전달)
+    // 3. 일반적인 변수 사용 
     printf("3. POWER_BAD(a)의 결과   : %d\n", POWER_BAD(a));
 
     return 0;
