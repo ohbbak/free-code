@@ -10,4 +10,4 @@ def generate_lotto():
 print("===  행운의 3자리 로또 번호 === ")
 numbers = generate_lotto()
 print(f"오늘의 번호: {numbers[0]}, {numbers[1]}, {numbers[2]}")
-print("================================")
+print("===========================")
