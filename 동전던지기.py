@@ -2,7 +2,7 @@ import random as r
 
 print("=== 🪙 동전 던지기 도박사 게임 시작 ===")
 
-# 승패 기록을 위한 변수
+
 win = 0
 lose = 0
 
