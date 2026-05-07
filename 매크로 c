@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// 위험한 매크로 (단순 치환)
+// 치환
 #define POWER_BAD(x) x * x
 
 // 안전한 매크로 (괄호 사용)
