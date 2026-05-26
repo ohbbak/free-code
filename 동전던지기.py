@@ -10,7 +10,6 @@ while True:
     print(f"\n현재 전적: {win}승 {lose}패")
     user_input = input("앞면(0) 또는 뒷면(1)을 예측하세요 (종료는 q): ")
 
-    # 종료 조건 처리
     if user_input.lower() == 'q':
         break
 
