@@ -1,0 +1,30 @@
+import random
+import json
+from datetime import datetime, timedelta
+
+def generate_mock_orders(count=5):
+    order_list = []
+    statuses = ["결제완료", "배송중", "배송완료", "취소됨"]
+    products = ["클라우드 서버 A형", "보안 솔루션 패키지", "대용량 스토리지", "유지보수 라이선스"]
+    
+    start_date = datetime.now() - timedelta(days=30)
+
+    for i in range(1, count + 1):
+        random_days = random.randint(0, 30)
+        order_date = start_date + timedelta(days=random_days)
+        
+        order = {
+            "order_id": f"ORD-2026-{10000 + i}",
+            "customer_company": f"(주)고객사_{random.randint(1, 10)}",
+            "product_name": random.choice(products),
+            "amount": random.randint(5, 150) * 10000, # 5만 원 ~ 150만 원
+            "status": random.choice(statuses),
+            "created_at": order_date.strftime("%Y-%m-%d %H:%M:%S")
+        }
+        order_list.append(order)
+        
+    return order_list
+
+# 대량 데이터 5개 생성 후 JSON 형태로 출력 보기
+mock_data = generate_mock_orders(5)
+print(json.dumps(mock_data, ensure_ascii=False, indent=2))
