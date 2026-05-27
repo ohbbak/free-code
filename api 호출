@@ -25,6 +25,6 @@ def generate_mock_orders(count=5):
         
     return order_list
 
-# 대량 데이터 5개 생성 후 JSON 형태로 출력 보기
+
 mock_data = generate_mock_orders(5)
 print(json.dumps(mock_data, ensure_ascii=False, indent=2))
