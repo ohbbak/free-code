@@ -1,0 +1,40 @@
+import re
+import csv
+
+def extract_error_logs(log_file_path, output_csv_path):
+    # 에러 패턴 정의 (시간 [로그레벨] 에러내용)
+    # 예시 로그: 2026-05-31 14:22:01 [ERROR] Database connection failed at IP 10.0.1.5
+    error_pattern = re.compile(r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) \[ERROR\] (.*)')
+
+    extracted_data = []
+
+    try:
+        with open(log_file_path, 'r', encoding='utf-8') as file:
+            for line in file:
+                match = error_pattern.search(line)
+                if match:
+                    timestamp = match.group(1)
+                    error_msg = match.group(2).strip()
+                    extracted_data.append([timestamp, error_msg])
+
+        # CSV 파일로 저장 (엑셀에서 바로 열림)
+        with open(output_csv_path, 'w', newline='', encoding='utf-8-sig') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(['발생 시간', '에러 상세 내용']) # 헤더
+            writer.writerows(extracted_data)
+
+        print(f"✅ 분석 완료! 총 {len(extracted_data)}건의 에러가 {output_csv_path}에 저장되었습니다.")
+
+    except FileNotFoundError:
+        print("❌ 로그 파일을 찾을 수 없습니다. 경로를 확인해주세요.")
+
+# --- 실행 예시 ---
+# 1. 가상의 로그 파일 생성 (테스트용)
+with open("server.log", "w", encoding="utf-8") as f:
+    f.write("2026-05-31 10:00:01 [INFO] Server Started\n")
+    f.write("2026-05-31 10:05:22 [ERROR] NullPointerException in UserService.java:45\n")
+    f.write("2026-05-31 10:10:05 [INFO] User login: user_01\n")
+    f.write("2026-05-31 10:15:40 [ERROR] Connection Timeout to Auth-Server\n")
+
+# 2. 에러 추출 실행
+extract_error_logs("server.log", "error_report.csv")
