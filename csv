@@ -2,7 +2,6 @@ import re
 import csv
 
 def extract_error_logs(log_file_path, output_csv_path):
-    # 에러 패턴 정의 (시간 [로그레벨] 에러내용)
     # 예시 로그: 2026-05-31 14:22:01 [ERROR] Database connection failed at IP 10.0.1.5
     error_pattern = re.compile(r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) \[ERROR\] (.*)')
 
